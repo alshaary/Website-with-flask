@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}
+    إنشاء حساب
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="container">
+        <form method="POST" class="form-register" style="color:white">
+            {{ form.hidden_tag() }}
+            <h1 class="h3 mb-3 font-weight-normal">
+                من فضلك قم بأنشاء حساب
+            </h1>
+            <br>
+            <h6> أسم المستخدم </h6>
+            {{ form.username(class="form-control", placeholder="أسم مستخدم") }}
+
+            <h6> البريد الأكتروني </h6>
+            {{ form.email_address(class="form-control", placeholder="البريد الأكتروني") }}
+
+            <h6> كلمة المرور </h6>
+            {{ form.password1(class="form-control", placeholder="كلمة المرور") }}
+
+            <h6> تأكيد كلمة المرور </h6>
+            {{ form.password2(class="form-control", placeholder="تأكيد كلمة المرور") }}
+
+            <br>
+
+            <div class="checkbox mb-3">
+               <h6>هل تملك حسابا ؟</h6>
+               <a class="btn btn-sm btn-secondary" href="{{ url_for('login_page') }}">تسجيل الدخول</a>
+            </div>
+
+            <input class="btn btn-lg btn-block btn-primary" id="submit" name="submit" type="submit" value="إنشاء حساب">
+
+        </form>
+    </div>
+</body>
+{% endblock %}

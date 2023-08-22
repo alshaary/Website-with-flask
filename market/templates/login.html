@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}
+    تسجيل الدخول
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="container">
+        <form method="POST" class="form-signin" style="color:white">
+            {{ form.hidden_tag() }}
+            <h1 class="h3 mb-3 font-weight-normal">
+                قم بتسجيل
+            </h1>
+            <br>
+            <h6> أسم المستخدم </h6>
+            {{ form.username(class="form-control", placeholder="أسم المستخدم") }}
+
+            <h6> كلمة المرور </h6>
+            {{ form.password(class="form-control", placeholder="كلمة مرور") }}
+
+            <br>
+
+
+            <div class="checkbox mb-3">
+               <h6> هل تريد إنشاء حساب ؟</h6>
+               <a class="btn btn-sm btn-secondary" href="{{ url_for('register_page') }}">إنشاء حساب</a>
+            </div>
+
+            <input class="btn btn-lg btn-block btn-primary" id="submit" name="submit" type="submit" value="تسجيل الدخول">
+
+        </form>
+    </div>
+</body>
+{% endblock %}
